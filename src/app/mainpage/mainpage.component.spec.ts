@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AtComponent } from './at.component';
+import { MainpageComponent } from './mainpage.component';
 
-describe('AtComponent', () => {
-  let component: AtComponent;
-  let fixture: ComponentFixture<AtComponent>;
+describe('MainpageComponent', () => {
+  let component: MainpageComponent;
+  let fixture: ComponentFixture<MainpageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AtComponent ]
+      declarations: [ MainpageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AtComponent);
+    fixture = TestBed.createComponent(MainpageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
