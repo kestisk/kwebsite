@@ -11,6 +11,8 @@ export class HeadComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  sk(a: HTMLInputElement) {
+    alert(a.value);
+  }
 }
 
