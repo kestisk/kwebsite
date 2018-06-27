@@ -14,5 +14,6 @@ export class HeadComponent implements OnInit {
   sk(a: HTMLInputElement) {
     alert(a.value);
   }
+
 }
 
