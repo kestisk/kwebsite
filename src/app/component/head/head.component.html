@@ -46,22 +46,14 @@
 <button type="button" class="btn btn-link">Link</button>
 
 
+<ul>
+  <li *ngFor="let hero of heroes" [@heroState]="hero.state" (click)="hero.toggleState()">
+    {{hero.name}}
+  </li>
+</ul>
 
 
 
-
-<form>
-  <div>
-    <input id="email" type="text" placeholder="Email...">
-  </div>
-  <div>
-    <input id="password" type="password" placeholder="Password...">
-  </div>
-  <div>
-    <button id="sign-in">Sign In/Register</button>
-    <button id="sign-out">Sign Out</button>
-  </div>
-</form>
 
 <!--Include firebase.js  -->
 
