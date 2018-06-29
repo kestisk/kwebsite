@@ -4,7 +4,7 @@
 <span class="label label-info">Info</span>
 <span class="label label-warning">Warning</span>
 <span class="label label-danger">Danger</span>
-<img style="width: 120px;height: 120px" src="assets/images/Logo.jpeg">
+
 
 <br/>
 <br/>
@@ -34,7 +34,7 @@
 </div>
 <br/>
 <br/>
-<button type="button" (click)="sk(kutu)" class="btn btn-primary">Primary</button>
+<button type="button" (click)="toggleState(kutu)" class="btn btn-primary">Primary</button>
 <button type="button" class="btn btn-secondary">Secondary</button>
 <button type="button" class="btn btn-success">Success</button>
 <button type="button" class="btn btn-danger">Danger</button>
@@ -45,12 +45,13 @@
 <input type="text" placeholder="at" #kutu>
 <button type="button" class="btn btn-link">Link</button>
 
+<tr [@heroState]="state" *ngFor="let todo of dizi; let sezer = index">
+  <td (click)="toggle2()">{{todo.text}}</td>
+  <td>{{sezer}}</td>
+</tr>
+<span>{{sezer}}</span>
 
-<ul>
-  <li *ngFor="let hero of heroes" [@heroState]="hero.state" (click)="hero.toggleState()">
-    {{hero.name}}
-  </li>
-</ul>
+
 
 
 
