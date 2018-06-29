@@ -44,6 +44,7 @@ export class HeadComponent {
   repeatItem = null;
   ngOnInit() {
     this.toggle2();
+
   }
   dizi = [{ text: 's' }, { text: "e" }, { text: "z" }, { text: "e" }, { text: "r" }, { text: "K" }]
   public toggleState() {
