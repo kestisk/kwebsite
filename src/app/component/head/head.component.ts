@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { MainpageComponent } from './../../mainpage/mainpage.component';
+import { Component, OnInit, Output, Input } from '@angular/core';
 import {
   trigger,
   state,
@@ -6,7 +7,10 @@ import {
   animate,
   transition
 } from '@angular/animations';
-import { Transform } from 'stream';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
+
+
 
 
 
@@ -15,47 +19,67 @@ import { Transform } from 'stream';
   templateUrl: './head.component.html',
   styleUrls: ['./head.component.css'],
   animations: [
-    trigger('heroState', [
-      state('inactive', style({ transform: 'translateX(0) scale(1)' })),
-      state('active', style({ transform: 'translateX(0) scale(0.9)' })),
-      transition('inactive => active', animate('100ms ease-in')),
-      transition('active => inactive', animate('100ms ease-out')),
-      transition('at => inactive', [
-        style({ transform: 'translateX(-100%) scale(1)' }),
+    trigger('dialog', [
+      transition('void => *', [
+        style({ transform: 'scale3d(.3, .3, .3)' }),
         animate(100)
       ]),
-      transition('inactive => at', [
-        animate(100, style({ transform: 'translateX(100%) scale(1)' }))
-      ]),
-      transition('at => active', [
-        style({ transform: 'translateX(0) translateY(100%) scale(0)' }),
-        animate(200)
-      ]),
-      transition('active => at', [
-        animate(200, style({ transform: 'translateX(0) scale(0)' }))
+      transition('* => void', [
+        animate(100, style({ transform: 'scale3d(.0, .0, .0)' }))
       ])
     ])
   ]
+
 })
 export class HeadComponent {
+  skshow = true;
+  closeResult: string;
   public state = 'active';
   sezer: String = "sk";
-  repeatCount = 1;
+  repeatCount = 0;
   repeatItem = null;
+  public sk: string = "sezer";
+  constructor(private modalService: NgbModal) { }
   ngOnInit() {
     this.toggle2();
 
   }
-  dizi = [{ text: 's' }, { text: "e" }, { text: "z" }, { text: "e" }, { text: "r" }, { text: "K" }]
-  public toggleState() {
+  openVerticallyCentered(content) {
+    debugger;
+    this.modalService.open(content, { centered: true });
+  }
+  openWindowCustomClass(content) {
+    this.modalService.open(content, { windowClass: 'dark-modal' });
+  }
+  close() {
+    this.skshow = false;
 
+  }
+  name = 'dizi';
+  dizi = [{ text: 'b' }, { text: 'e' }, { text: 'r' }, { text: 'k' }, { text: 'a' }, { text: 'y' }];
+  mydizi = [{ text: '' }]
+  adddizim(at: string) {
+    const sk = {
+      text: at,
+    };
+    this.mydizi.push(sk)
+  }
+
+
+  public toggleState() {
+    // this.mydizi[this.repeatCount].text = this.dizi[this.repeatCount].text;
+    this.adddizim(this.dizi[this.repeatCount].text);
 
     // this.sezer = at.toString();
     // this.state = this.state === 'active' ? 'void' : 'active';
 
     this.state = this.state === 'active' ? 'at' : 'active';
     this.repeatItem = setInterval(() => {
+
       this.repeatCount++;
+      // this.mydizi[this.repeatCount].text = this.dizi[this.repeatCount].text;
+      this.adddizim(this.dizi[this.repeatCount].text);
+
       this.state = this.state === 'active' ? 'at' : 'active';
       if (this.repeatCount > 4) {
         clearInterval(this.repeatItem);
@@ -67,6 +91,7 @@ export class HeadComponent {
 
   }
   toggle2() {
+
     //  this.toggleState();
     if (this.repeatItem == null) {
       this.toggleState();

@@ -20,9 +20,13 @@
     "@angular/platform-browser": "^6.0.3",
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
+    "@ng-bootstrap/ng-bootstrap": "^2.2.0",
     "bootstrap": "^3.3.7",
     "core-js": "^2.5.4",
+    "emailjs": "^2.1.0",
+    "firebase-tools": "^3.19.2",
     "rxjs": "^6.0.0",
+    "rxjs-compat": "^6.2.2",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

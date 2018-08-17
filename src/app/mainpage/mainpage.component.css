@@ -1,1 +1,43 @@
+.dialog {
+    z-index: 1000;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 20%;
+    margin-right: auto;
+    margin-left: auto;
+    min-height: 300px;
+   opacity: 0.90;
+    width: 90%;
+    max-width: 700px;
+    background-color: #fff;
+    padding: 12px;
+    box-shadow: 0 0 0 3px black, 0 0 0 6px white;
+ 
+  }
+  
+ 
+  .dialog__close-btn {
+    border: 0;
+    background: none;
+    color: #2d2d2d;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 1.2em;
+  }
 
+.blu{
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+.blu2{
+  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -o-filter: blur(1px);
+  -ms-filter: blur(1px);
+  filter: blur(1px);
+}

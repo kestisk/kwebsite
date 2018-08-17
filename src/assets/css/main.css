@@ -1176,7 +1176,6 @@ h1, h2, h3, h4, h5, h6 {
 	height:100%;
 	position:absolute;
 	width:100%;
-	z-index:1;
 	left:0;
 	bottom:0;
 	background-image:url(../images/pattern.png);
@@ -1281,9 +1280,7 @@ h1, h2, h3, h4, h5, h6 {
 	float:left
 }
 
-#contact-form .mail-field {
-	
-}
+
 
 #contact-form-section .form-control {
 	border-radius:0;

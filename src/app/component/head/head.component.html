@@ -34,7 +34,7 @@
 </div>
 <br/>
 <br/>
-<button type="button" (click)="toggleState(kutu)" class="btn btn-primary">Primary</button>
+
 <button type="button" class="btn btn-secondary">Secondary</button>
 <button type="button" class="btn btn-success">Success</button>
 <button type="button" class="btn btn-danger">Danger</button>
@@ -43,13 +43,39 @@
 <button type="button" class="btn btn-light">Light</button>
 <button type="button" class="btn btn-dark">Dark</button>
 <input type="text" placeholder="at" #kutu>
+
 <button type="button" class="btn btn-link">Link</button>
 
-<tr [@heroState]="state" *ngFor="let todo of dizi; let sezer = index">
-  <td (click)="toggle2()">{{todo.text}}</td>
-  <td>{{sezer}}</td>
+
+<tr>
+  <td [@heroState]="state" *ngFor="let hero of mydizi">
+
+    {{hero.text}}
+  </td>
 </tr>
-<span>{{sezer}}</span>
+
+<br/>
+<div></div>
+<button (click)="skshow = !skshow" class="btn">Open2</button>
+
+
+
+
+<div class="dialog" *ngIf="skshow">
+  <div>
+    <h3>ÖNKAYIT FIRSATINI KAÇIRMAYIN</h3>
+    <input type="text" placeholder="ADSOYAD">
+    <input type="text" placeholder="MAİL">
+    <input type="button" value="KAYDOL">
+    <button (click)="skshow=!skshow" aria-label="Close" class="dialog__close-btn">X</button>
+  </div>
+
+</div>
+
+
+
+
+
 
 
 

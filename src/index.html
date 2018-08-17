@@ -4,8 +4,14 @@
 <head>
 
   <meta charset="utf-8">
-  <title>Kwebsite</title>
+  <title>KÜSUR-AT</title>
+  <meta name="keywords" content="kusurat,at,matematik,asistan,yapay,zeka,temel" />
+  <meta http-equiv="content-language" content="tr" />
+  <meta name="description" content="Yanınızdan Ayırmayacağınız Matematik Asistanınız" />
   <base href="/">
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id" content="796101876658-oiveihdd4it1ps4kbbjlicq86lu806ud.apps.googleusercontent.com">
+
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/css/prettyPhoto.css" rel="stylesheet">
   <link href="assets/css/font-awesome.min.css" rel="stylesheet">
@@ -25,6 +31,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
     crossorigin="anonymous">
 
+
+
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
@@ -33,10 +41,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
 </head>
 
 <body>
   <app-root></app-root>
+
   <script type="text/javascript" src="assets/js/jquery.js"></script>
   <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="assets/js/smoothscroll.js"></script>
@@ -44,6 +54,109 @@
   <script type="text/javascript" src="assets/js/jquery.prettyPhoto.js"></script>
   <script type="text/javascript" src="assets/js/jquery.parallax.js"></script>
   <script type="text/javascript" src="assets/js/main.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js"></script>
+
+
+
+
+
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDYtG99nz3L_yVD2yHKFtmuJqsX6OeGWJM",
+      authDomain: "kusur-at-209912.firebaseapp.com",
+      databaseURL: "https://kusur-at-209912.firebaseio.com",
+      projectId: "kusur-at-209912",
+      storageBucket: "kusur-at-209912.appspot.com",
+      messagingSenderId: "796101876658"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <script> 
+
+    function kayit() {
+      var isim = document.getElementById("isim").value;
+      var mail = document.getElementById("mayl").value;
+      debugger;
+      if (isim != "" && mail != "") {
+        var db = firebase.firestore();
+
+        db.collection("users").add({
+          id: "manuel",
+          name: isim,
+          mail: mail
+        })
+          .then(function () {
+            alert("Ön Kaydınız Başarılı Bir Şekilde Alınmıştır")
+            document.getElementById("isim2").value = "";
+            document.getElementById("mayl2").value = "";
+          })
+          .catch(function () {
+
+          });
+
+      }
+      else
+        alert("BOŞ ALAN BIRAKMAYINIZ");
+
+
+    }
+    function kayitpop() {
+      var isim = document.getElementById("isim2").value;
+      var mail = document.getElementById("mayl2").value;
+      debugger;
+      if (isim != "" && mail != "") {
+        var db = firebase.firestore();
+
+        db.collection("users").add({
+          id: "manuel",
+          name: isim,
+          mail: mail
+        })
+          .then(function () {
+            alert("Ön Kaydınız Başarılı Bir Şekilde Alınmıştır")
+            document.getElementById("isim2").value = "";
+            document.getElementById("mayl2").value = "";
+          })
+          .catch(function () {
+
+          });
+
+      }
+      else
+        alert("BOŞ ALAN BIRAKMAYINIZ");
+
+
+    }
+    function onSignIn(googleUser) {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+      });
+      var profile = googleUser.getBasicProfile();
+      var db = firebase.firestore();
+
+      db.collection("users").add({
+        id: profile.getId(),
+        name: profile.getName(),
+        mail: profile.getEmail()
+      })
+        .then(function () {
+          alert("Ön Kaydınız Başarılı Bir Şekilde Alınmıştır")
+        })
+        .catch(function () {
+
+        });
+
+    }
+
+  </script>
+
+
 </body>
 
 </html>

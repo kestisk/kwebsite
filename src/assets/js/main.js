@@ -40,15 +40,15 @@ jQuery(function ($) {
 
 
 	// Contact form validation
-	var form = $('.contact-form');
-	form.submit(function () {
-		'use strict',
-			$this = $(this);
-		$.post($(this).attr('action'), function (data) {
-			$this.prev().text(data.message).fadeIn().delay(3000).fadeOut();
-		}, 'json');
-		return false;
-	});
+	/*	var form = $('.contact-form');
+		form.submit(function () {
+			'use strict',
+				$this = $(this);
+			$.post($(this).attr('action'), function (data) {
+				$this.prev().text(data.message).fadeIn().delay(3000).fadeOut();
+			}, 'json');
+			return false;
+		}); */
 
 
 	// Navigation Scroll

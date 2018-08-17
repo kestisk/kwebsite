@@ -1,4 +1,4 @@
-<body>
+<body [ngClass]="bluu" (mousemove)="konumbul($event)">
   <div class="preloader">
     <div class="preloder-wrap">
       <div class="preloder-inner">
@@ -16,6 +16,7 @@
   <header id="navigation">
     <div class="navbar navbar-inverse navbar-fixed-top" role="banner">
       <div class="container">
+        <div style="height: 20px;width: 100%" (mouseout)="open()"></div>
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -41,17 +42,17 @@
               <a href="#services">Kullanım</a>
             </li>
             <li class="scroll">
-              <a href="#our-team">Marduk Team</a>
-            </li>
-            <li class="scroll">
-              <a href="#portfolio">Galeri</a>
-            </li>
-            <li class="scroll">
-              <a href="#clients">Hedef Kitle</a>
-            </li>
-            <li class="scroll">
               <a href="#blog">Detaylar</a>
             </li>
+            <li class="scroll">
+              <a href="#clients">Yorumlar</a>
+            </li>
+            <li class="scroll">
+              <a href="#our-team">Marduk Team</a>
+            </li>
+
+
+
             <li class="scroll">
               <a href="#contact">İletişim</a>
             </li>
@@ -72,8 +73,17 @@
         <div class="item active" style="background-image: url(assets/images/slider/slide1.jpg)">
           <div class="carousel-caption">
             <div>
-              <h2 class="heading animated bounceInDown">'Himu' Onepage HTML Template</h2>
-              <p class="animated bounceInUp">Fully Professional one page template</p>
+
+              <h2 class="heading animated bounceInDown">
+                <tr>
+                  <td style="color: blue;font-size: 70px" *ngFor="let hero of mydizi">
+
+                    <!-- {{hero.text}}-->
+                  </td>
+                </tr>
+
+              </h2>
+
 
             </div>
           </div>
@@ -98,6 +108,7 @@
     <div class="container">
       <div class="text-center">
         <div class="col-sm-8 col-sm-offset-2">
+
           <h2 class="title-one">NEDİR?</h2>
           <p>Küsur-at 4.sınıftan 8.sınıfa kadar her öğrencinin kullanabileceği bir matematik asistanıdır.</p>
         </div>
@@ -120,6 +131,7 @@
                   <i class="fa fa-users"></i>Konu Anlatımı</a>
               </li>
             </ul>
+
             <div class="tab-content">
               <div class="tab-pane fade in active" id="about">
                 <div class="media">
@@ -131,7 +143,7 @@
               </div>
               <div class="tab-pane fade" id="mission">
                 <div class="media">
-                  <img class="pull-left media-object" src="assets/images/about-us/mission.jpg" alt="Mission">
+                  <img class="pull-left media-object" src="assets/images/about-us/mission.gif" alt="Mission">
                   <div class="media-body">
                     <p>Animasyonlar Görsel Öğrenim Teknikleri ile Öğrencinin Öğrenim Hızını Arttıracak Şekilde Tasarlanmıştır
                     </p>
@@ -177,7 +189,7 @@
               <!-- End Skill Bar -->
               <div class="skillbar clearfix " data-percent="95%">
                 <div class="skillbar-title">
-                  <span>Sayılar </span>
+                  <span>Oyunlarla&nbsp;Öğretecek </span>
                 </div>
                 <div class="skillbar-bar"></div>
                 <div class="skill-bar-percent">95%</div>
@@ -185,7 +197,7 @@
               <!-- End Skill Bar -->
               <div class="skillbar clearfix " data-percent="100%">
                 <div class="skillbar-title">
-                  <span>Wordpress</span>
+                  <span>KÜSUR&nbsp;-&nbsp;AT</span>
                 </div>
                 <div class="skillbar-bar"></div>
                 <div class="skill-bar-percent">100%</div>
@@ -204,8 +216,9 @@
       <div class="row text-center">
         <div class="col-sm-8 col-sm-offset-2">
           <h2 class="title-one">Kullanım Kolaylığı</h2>
-          <p>İster android ister ios telefonlarda isterseniz tabletinizden her an heryerde yanınızda olacak bir matematik asistanı.
+          <p>İster android ister ios telefonlarda isterseniz tabletinizden her an her yerde yanınızda olacak bir matematik asistanı.
           </p>
+
         </div>
       </div>
       <div class="row">
@@ -215,19 +228,22 @@
               <div class="col-sm-4">
                 <div class="single-service">
                   <i class="fa fa-th"></i>
-                  <h2>Design</h2>
-                  <p>Renklendirme ve Dizayn Görsel Hafıza Tekniklerince Onaylanmış Çocukların Dikkatinini Toplayarak Kendilerini
-                    Matematiğin Dünysnda Hissetmelerini Sağlayacaktır
+                  <h2>Dizayn</h2>
+                  <p>Renklendirme ve Dizayn Görsel Hafıza Tekniklerince Onaylanmış Çocukların Dikkatini Toplayarak Kendilerini
+                    Matematiğin Dünyasında Hissetmelerini Sağlayacaktır
                   </p>
+                  <br/>
+                  <br/>
+                  <br/>
                 </div>
               </div>
               <div class="col-sm-4">
                 <div class="single-service">
                   <i class="fa fa-pencil-square-o"></i>
                   <h2>Hızlı Çözüm</h2>
-                  <p>Sorunuzuz İlgili Olduğu Konuyu Bulun ve Sadece Sorudaki Değerleri Oraya Yazın Cevabın Detaylı Öğretici
+                  <p>Sorunuzun İlgili Olduğu Konuyu Bulun ve Sadece Sorudaki Değerleri Oraya Yazın Cevabın Detaylı Öğretici
                     İşlem Adımlarıyla Hızla Önünüze Geldiğini Göreceksiniz.Animasyonu İzleyip Soruyu Kavradığınızda Asistanınız
-                    Benzer Soru Tarzlarından Kenidinizi Denemeniz İçin Size KENDİN DENE sayfasını açacaktır
+                    Benzer Soru Tarzlarından Kenidinizi Denemeniz İçin Size KENDİNİ DENE Sayfasını Açacaktır
                   </p>
                 </div>
               </div>
@@ -236,8 +252,10 @@
                   <i class="fa fa-users"></i>
                   <h2>Konu Anlatımlar</h2>
                   <p>Profesyonel Matematik Öğretmenlerince Hazırlanan Ders Anlatım Videoları İle Bilmediğiniz Konuları Öğrenin
-                    ve Tekrar Asistanınızın KENDİN DENE sayfasından Size Soracağı Sorularla Konuyu Pekiştireceksiniz
+                    ve Asistanınızın KENDİNİ DENE sayfasından Size Soracağı Sorularla Konuyu Pekiştirin
                   </p>
+                  <br/>
+                  <br/>
                 </div>
               </div>
             </div>
@@ -248,114 +266,215 @@
   </section>
   <!--/#service-->
 
-  <section id="our-team">
+  <!--/#clients-->
+
+  <section id="blog">
     <div class="container">
-      <div class="row text-center">
+      <div class="row text-center clearfix">
         <div class="col-sm-8 col-sm-offset-2">
-          <h2 class="title-one">Marduk Team</h2>
-          <p>TAKIMIMIZLA TANIŞIN ve SİZLERE DAHA İYİ GELİŞTİRMELER SUNMAMIZ İÇİN BİZE ULAŞIN</p>
+          <h2 class="title-one">Detaylar</h2>
+          <p class="blog-heading">Uygulama İçeriğine ve Konu Anlatımlarına Ait Detayları Öğrenin</p>
         </div>
       </div>
-      <div id="team-carousel" class="carousel slide" data-interval="false">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="single-blog">
+            <img src="assets/images/blog/1.jpg" alt="" />
+            <h2>Daha Başarılı Bir Geleceğe</h2>
 
-
-        <div class="carousel-inner team-members">
-          <div class="row item active">
-            <div class="col-sm-6 col-md-3">
-              <div class="single-member">
-                <img src="assets/images/our-team/member1.jpg" alt="team member" />
-                <h4>Sezer KESTİ</h4>
-                <h5>Yazılım Mühendisi</h5>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>
-                <div class="socials">
-
-                  <a href="mailto:sezerkesti@gmail.com">
-                    <i class="fa fa-google-plus"></i>
-                  </a>
-
-                  <a href="https://www.linkedin.com/in/sezer-kesti-648b92165">
-                    <i class="fa fa-linkedin"></i>
-                  </a>
-                </div>
-              </div>
+            <div class="blog-content">
+              <p>Teknolojiyi Nasıl ve Nerede Kullanacaklarını Bilmeyen Çocuklarımıza Bir Kapı Açarak Matematiğin Sihirli ve
+                Eğlenceli Dünyasını Keşfetmelerini Sağlıyoruz.</p>
             </div>
-            <div class="col-sm-6 col-md-3">
-              <div class="single-member">
-                <img src="assets/images/our-team/member2.jpg" alt="team member" />
-                <h4>Onur Tekin GÜNDOĞDU</h4>
-                <h5>Yazılım MÜhendisi</h5>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>
-                <div class="socials">
-                  <a href="#">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-
-                  <a href="mailto:onurtekin96@hotmail.com">
-                    <i class="fa fa-google-plus"></i>
-                  </a>
-
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <div class="single-member">
-                <img src="assets/images/our-team/member3.jpg" alt="team member" />
-                <h4>Sican YAVUZ</h4>
-                <h5>İş Geliştirici</h5>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>
-                <div class="socials">
-                  <a href="#">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-google-plus"></i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-dribbble"></i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-linkedin"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <div class="single-member">
-                <img src="assets/images/our-team/member4.jpg" alt="team member" />
-                <h4>Büşra ...</h4>
-                <h5>Tasarımcı</h5>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>
-                <div class="socials">
-                  <a href="#">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-google-plus"></i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-dribbble"></i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-linkedin"></i>
-                  </a>
+            <a href="" class="btn btn-primary" data-toggle="modal" data-target="#blog-detail">Daha Fazla Oku</a>
+          </div>
+          <div class="modal fade" id="blog-detail" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <img src="assets/images/blog/1.jpg" alt="" />
+                  <h2>Daha Başarılı Bir Geleceğe</h2>
+                  <p>Hayatımıza Giren Tabletler ve Akıllı Telefonlar ile Birlikte Eğitim Çağındaki Çocukların Bu Teknolojik
+                    Cihazları Çok Verimsiz Bir Şekilde Sadece Oyun Amaçlı Kullandıkları Bir Gerçek.
+                  </p>
+                  <p>İşte Bunu Değiştirmek Adına Ortaya Çıkardığımız Uygulamamız ile Çocuklarımızın Bu Cihazları Daha Verimli
+                    ve Eğitim Amaçlı Kullanmalarını Hedefliyoruz.Hızla Gelişen Teknoloji ile Birlikte Onları Digital Dünyanın
+                    Eğlenceli ve Öğretici Yönleri ile Birleştireceğiz.Matematik Asistanımız KÜSUR-AT Onlara Böyle Bir Dünyanın
+                    Kapılarını Açacak</p>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
+        <div class="col-sm-4">
+          <div class="single-blog">
+            <img src="assets/images/blog/3.jpg" alt="" />
+            <h2>Ders Çalışırken Sıkılmak Yok</h2>
+
+            <div class="blog-content">
+              <p>Hem Ögrenip Hem Eğlenecekler.Diğer Kullanıcılarla Bir Rekabet Ortamında Matematik Oyunlarıyla Öğrenmek Daha
+                Önce Hiç Bu Kadar Eğlenceli Olmamıştı</p>
+            </div>
+            <a href="" class="btn btn-primary" data-toggle="modal" data-target="#blog-three">Daha Fazla Oku</a>
+          </div>
+          <div class="modal fade" id="blog-three" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <img src="assets/images/blog/3.jpg" alt="" />
+                  <h2>Ders Çalışırken Sıkılmak Yok</h2>
+                  <p>Matematik Çalışmak ve Öğrenmek Öğrenciler İçin Her Zaman Hem Çok Sıkıcı Hem de Çok Zorlayıcı Olmuştur.
+                    Peki Aslında Sayılarla Aranızı Düzeltebileceğimizi Söylesek :).
+                  </p>
+                  <p>KÜSUR-AT Öncelikle Sizin Sorduğunuz Soruların Çözümlerini Detaylı İşlem Adımlarıyla ve Bunları Eğlenceli
+                    Animasyonlarla Gözünüzde Canlandırmanızı Sağlayacak.Sonrasında Konuyu Pekiştirmeniz İçin Size Benzer
+                    Sorular Göndererektir.Anlamadığınız Soru Tarzında Videoya Git Seçeneği ile Konu Anlatımlarına Direk Uygulama
+                    İçerisinden Ulaşabilecek ve Eksiklerinizi Tamamlayacaksınız.
+                  </p>
+                  <p>BİTMEDİ Uygulama İçi Oyunlarla Puanlar Toplayıp Karakterizi Güçlendirerek Daha Zorlu Mücadelelere Hazırlanabilirsiniz.
+                    Çünkü Arkadaşlarınıza Meydan Okuyup Onlarla Yarışabileceksiniz. Toplayacağınız Puanlarla da Ödüllerimizden
+                    Seçim Yaparak Başarınızı Taçlandıracaksınız.
+                  </p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="single-blog">
+            <img src="assets/images/blog/2.jpg" alt="" />
+            <h2>Gelişimini Takip Edin</h2>
+
+            <div class="blog-content">
+              <p>Web Sitemiz Üzerinden Kolaylıkla Öğrencimizin Hangi Konularda Ne kadar İlerlediğini ve Başarı Durumunu An ve
+                An Gelişimini Takip Edebileceksiniz.
+              </p>
+            </div>
+            <a href="" class="btn btn-primary" data-toggle="modal" data-target="#blog-two">Daha Fazla Oku</a>
+          </div>
+          <div class="modal fade" id="blog-two" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <img src="assets/images/blog/2.jpg" alt="" />
+                  <h2>Gelişimini Takip Edin</h2>
+                  <p>Velilerimiz de Öğrencilerimiz de Her An Her Yerden Web Sitemiz Üzerinden Başarı Çizelgesini ve İşlem Geçmişini
+                    Görüntüleyebilecektir.Böylelikle Konularda ki Gelişiminizi Detaylı Analizlerimizle İnceleyeceksiniz.</p>
+                  <p>Analizlerde Hangi Konuda Hangi Seviyedesin? En Çok Yanlış veya En Çok Doğru Yaptığın Konular Hangileri?
+                    Toplam Çözdüğün Soru Sayısı ve Çalışma Yaptığın Konulardaki İlerleyişin Hakkında Bilgiler Bulabileceksin.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section id="clients" class="parallax-section">
+    <div class="container">
+      <div class="clients-wrapper">
+        <div class="row text-center">
+          <div class="col-sm-8 col-sm-offset-2">
+            <h2 class="title-one">Düşünce ve Yorumlar</h2>
+            <p>Eğitim Dünyasının Önde Gelen İsimlerinden Düşüncelerini Beyan Etmelerini İstedik.</p>
+          </div>
+        </div>
+        <div id="clients-carousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#clients-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#clients-carousel" data-slide-to="1"></li>
+            <li data-target="#clients-carousel" data-slide-to="2"></li>
+            <li data-target="#clients-carousel" data-slide-to="3"></li>
+          </ol>
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <div class="single-client">
+                <div class="media">
+                  <img class="pull-left" src="assets/images/logo150.jpg" alt="">
+                  <div class="media-body">
+                    <blockquote>
+                      <p>AKADEMİSYENLERDEN TAM DESTEK</p>
+                      <p>Proje Ekibimizin Görüşme Yaptığı Farklı Üniversitelerdeki Akademisyenler Tarafından Yazılı ve Sözlü
+                        Olumlu Dönütler ile Projemiz Desteklendi </p>
+                      <p></p>
+                      <small></small>
+
+
+                    </blockquote>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="single-client">
+                <div class="media">
+                  <img class="pull-left" src="assets/images/logo150.jpg" alt="">
+                  <div class="media-body">
+                    <blockquote>
+                      <p>VELİLERDEN TAM DESTEK</p>
+                      <p>2500'e Yakın Ortaöğretim ve Lise Dengi Öğrenci Velileri ile Yapılan Görüşmelerde Öğrencilerin Temel
+                        Eksikliklerini ve İhtiyaçlarını Giderecek Yönde Bir Uygulama Olacağına Yönelik Görüşleri Alındı
+                      </p>
+                      <p></p>
+                      <small></small>
+
+
+                    </blockquote>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="single-client">
+                <div class="media">
+                  <img class="pull-left" src="assets/images/logo150.jpg" alt="">
+                  <div class="media-body">
+                    <blockquote>
+                      <p>EĞİTİM KURUMLARINDAN TAM DESTEK</p>
+                      <p>Türkiye Genelinde Bir Çok Başarıya İmza Atmış Okulların Yöneticileri ve Öğretmenlerinden Alınan Görüşlerde
+                        Projemiz ile Büyük Bir Eksiğin Giderileceği Öngörülmüştür</p>
+                      <p></p>
+                      <small></small>
+
+
+                    </blockquote>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="single-client">
+                <div class="media">
+                  <img class="pull-left" src="assets/images/logo150.jpg" alt="">
+                  <div class="media-body">
+                    <blockquote>
+                      <p>ÜLKE GENELİNDEKİ BÜYÜK VAKIFLAR</p>
+                      <p>Görüşmelerimiz Devam Etmektedir</p>
+                      <p></p>
+                      <small></small>
+
+
+                    </blockquote>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
-  <!--/#Our-Team-->
 
-  <section id="portfolio">
+  <!--   <section id="portfolio">
     <div class="container">
       <div class="row text-center">
         <div class="col-sm-8 col-sm-offset-2">
@@ -381,553 +500,313 @@
           <a class="btn btn-default " href="#" data-filter="*">TAMAMI</a>
         </li>
       </ul>
-      <!--/#portfolio-filter-->
-      <div class="portfolio-items jooma">
-        <div class="col-sm-3 col-xs-12 portfolio-item html">
-          <div class="view efffect">
-            <div class="portfolio-image">
-              <img src="assets/images/portfolio/1.jpg" alt="">
-            </div>
-            <div class="mask text-center">
-              <h3>KÜSUR-AT</h3>
-              <h4>Lorem ipsum dolor sit amet consectetur</h4>
-              <a href="#">
-                <i class="fa fa-link"></i>
-              </a>
-              <a href="assets/images/portfolio/big-item.jpg" data-gallery="prettyPhoto">
-                <i class="fa fa-search-plus"></i>
-              </a>
-            </div>
-          </div>
+     
+  <div class="portfolio-items jooma">
+    <div class="col-sm-3 col-xs-12 portfolio-item html">
+      <div class="view efffect">
+        <div class="portfolio-image">
+          <img src="assets/images/portfolio/1.jpg" alt="">
         </div>
-        <div class="col-sm-3 col-xs-12 portfolio-item jooma">
-          <div class="view efffect">
-            <div class="portfolio-image">
-              <img src="assets/images/portfolio/2.jpg" alt="">
-            </div>
-            <div class="mask text-center">
-              <h3>KÜSUR-AT</h3>
-              <h4>Lorem ipsum dolor sit amet consectetur</h4>
-              <a href="#">
-                <i class="fa fa-link"></i>
-              </a>
-              <a href="assets/images/portfolio/big-item4.jpg" data-gallery="prettyPhoto">
-                <i class="fa fa-search-plus"></i>
-              </a>
-            </div>
-          </div>
+        <div class="mask text-center">
+          <h3>KÜSUR-AT</h3>
+          <h4>Lorem ipsum dolor sit amet consectetur</h4>
+          <a href="#">
+            <i class="fa fa-link"></i>
+          </a>
+          <a href="assets/images/portfolio/big-item.jpg" data-gallery="prettyPhoto">
+            <i class="fa fa-search-plus"></i>
+          </a>
         </div>
-        <div class="col-sm-3 col-xs-12 portfolio-item wordpress">
-          <div class="view efffect">
-            <div class="portfolio-image">
-              <img src="assets/images/portfolio/3.jpg" alt="">
-            </div>
-            <div class="mask text-center">
-              <h3>KÜSUR-AT</h3>
-              <h4>Lorem ipsum dolor sit amet consectetur</h4>
-              <a href="#">
-                <i class="fa fa-link"></i>
-              </a>
-              <a href="assets/images/portfolio/big-item.jpg" data-gallery="prettyPhoto">
-                <i class="fa fa-search-plus"></i>
-              </a>
-            </div>
-          </div>
+      </div>
+    </div>
+    <div class="col-sm-3 col-xs-12 portfolio-item jooma">
+      <div class="view efffect">
+        <div class="portfolio-image">
+          <img src="assets/images/portfolio/2.jpg" alt="">
         </div>
-        <div class="col-sm-3 col-xs-12 portfolio-item megento">
-          <div class="view efffect">
-            <div class="portfolio-image">
-              <img src="assets/images/portfolio/4.jpg" alt="">
-            </div>
-            <div class="mask text-center">
-              <h3>KÜSUR-AT</h3>
-              <h4>Lorem ipsum dolor sit amet consectetur</h4>
-              <a href="#">
-                <i class="fa fa-link"></i>
-              </a>
-              <a href="assets/images/portfolio/big-item.jpg" data-gallery="prettyPhoto">
-                <i class="fa fa-search-plus"></i>
-              </a>
-            </div>
-          </div>
+        <div class="mask text-center">
+          <h3>KÜSUR-AT</h3>
+          <h4>Lorem ipsum dolor sit amet consectetur</h4>
+          <a href="#">
+            <i class="fa fa-link"></i>
+          </a>
+          <a href="assets/images/portfolio/big-item4.jpg" data-gallery="prettyPhoto">
+            <i class="fa fa-search-plus"></i>
+          </a>
         </div>
-        <div class="col-sm-3 col-xs-12 portfolio-item html">
-          <div class="view efffect">
-            <div class="portfolio-image">
-              <img src="assets/images/portfolio/5.jpg" alt="">
-            </div>
-            <div class="mask text-center">
-              <h3>KÜSUR-AT</h3>
-              <h4>Lorem ipsum dolor sit amet consectetur</h4>
-              <a href="#">
-                <i class="fa fa-link"></i>
-              </a>
-              <a href="assets/images/portfolio/big-item.jpg" data-gallery="prettyPhoto">
-                <i class="fa fa-search-plus"></i>
-              </a>
-            </div>
-          </div>
+      </div>
+    </div>
+    <div class="col-sm-3 col-xs-12 portfolio-item wordpress">
+      <div class="view efffect">
+        <div class="portfolio-image">
+          <img src="assets/images/portfolio/3.jpg" alt="">
         </div>
-        <div class="col-sm-3 col-xs-12 portfolio-item wordpress">
-          <div class="view efffect">
-            <div class="portfolio-image">
-              <img src="assets/images/portfolio/6.jpg" alt="">
-            </div>
-            <div class="mask text-center">
-              <h3>KÜSUR-AT</h3>
-              <h4>Lorem ipsum dolor sit amet consectetur</h4>
-              <a href="#">
-                <i class="fa fa-link"></i>
-              </a>
-              <a href="assets/images/portfolio/big-item.jpg" data-gallery="prettyPhoto">
-                <i class="fa fa-search-plus"></i>
-              </a>
-            </div>
-          </div>
+        <div class="mask text-center">
+          <h3>KÜSUR-AT</h3>
+          <h4>Lorem ipsum dolor sit amet consectetur</h4>
+          <a href="#">
+            <i class="fa fa-link"></i>
+          </a>
+          <a href="assets/images/portfolio/big-item.jpg" data-gallery="prettyPhoto">
+            <i class="fa fa-search-plus"></i>
+          </a>
         </div>
-        <div class="col-sm-3 col-xs-12 portfolio-item html">
-          <div class="view efffect">
-            <div class="portfolio-image">
-              <img src="assets/images/portfolio/7.jpg" alt="">
-            </div>
-            <div class="mask text-center">
-              <h3>KÜSUR-AT</h3>
-              <h4>Lorem ipsum dolor sit amet consectetur</h4>
-              <a href="#">
-                <i class="fa fa-link"></i>
-              </a>
-              <a href="assets/images/portfolio/big-item.jpg" data-gallery="prettyPhoto">
-                <i class="fa fa-search-plus"></i>
-              </a>
-            </div>
-          </div>
+      </div>
+    </div>
+    <div class="col-sm-3 col-xs-12 portfolio-item megento">
+      <div class="view efffect">
+        <div class="portfolio-image">
+          <img src="assets/images/portfolio/4.jpg" alt="">
         </div>
-        <div class="col-sm-3 col-xs-12 portfolio-item joomla">
-          <div class="view efffect">
-            <div class="portfolio-image">
-              <img src="assets/images/portfolio/8.jpg" alt="">
-            </div>
-            <div class="mask text-center">
-              <h3>KÜSUR-AT</h3>
-              <h4>Lorem ipsum dolor sit amet consectetur</h4>
-              <a href="#">
-                <i class="fa fa-link"></i>
-              </a>
-              <a href="assets/images/portfolio/big-item.jpg" data-gallery="prettyPhoto">
-                <i class="fa fa-search-plus"></i>
-              </a>
-            </div>
-          </div>
+        <div class="mask text-center">
+          <h3>KÜSUR-AT</h3>
+          <h4>Lorem ipsum dolor sit amet consectetur</h4>
+          <a href="#">
+            <i class="fa fa-link"></i>
+          </a>
+          <a href="assets/images/portfolio/big-item.jpg" data-gallery="prettyPhoto">
+            <i class="fa fa-search-plus"></i>
+          </a>
         </div>
-        <div class="col-sm-3 col-xs-12 portfolio-item html">
-          <div class="view efffect">
-            <div class="portfolio-image">
-              <img src="assets/images/portfolio/9.jpg" alt="">
-            </div>
-            <div class="mask text-center">
-              <h3>KÜSUR-AT</h3>
-              <h4>Lorem ipsum dolor sit amet consectetur</h4>
-              <a href="#">
-                <i class="fa fa-link"></i>
-              </a>
-              <a href="assets/images/portfolio/big-item.jpg" data-gallery="prettyPhoto">
-                <i class="fa fa-search-plus"></i>
-              </a>
-            </div>
-          </div>
+      </div>
+    </div>
+    <div class="col-sm-3 col-xs-12 portfolio-item html">
+      <div class="view efffect">
+        <div class="portfolio-image">
+          <img src="assets/images/portfolio/5.jpg" alt="">
         </div>
-        <div class="col-sm-3 col-xs-12 portfolio-item wordpress">
-          <div class="view efffect">
-            <div class="portfolio-image">
-              <img src="assets/images/portfolio/10.jpg" alt="">
-            </div>
-            <div class="mask text-center">
-              <h3>KÜSUR-AT</h3>
-              <h4>Lorem ipsum dolor sit amet consectetur</h4>
-              <a href="#">
-                <i class="fa fa-link"></i>
-              </a>
-              <a href="assets/images/portfolio/big-item.jpg" data-gallery="prettyPhoto">
-                <i class="fa fa-search-plus"></i>
-              </a>
-            </div>
-          </div>
+        <div class="mask text-center">
+          <h3>KÜSUR-AT</h3>
+          <h4>Lorem ipsum dolor sit amet consectetur</h4>
+          <a href="#">
+            <i class="fa fa-link"></i>
+          </a>
+          <a href="assets/images/portfolio/big-item.jpg" data-gallery="prettyPhoto">
+            <i class="fa fa-search-plus"></i>
+          </a>
         </div>
-        <div class="col-sm-3 col-xs-12 portfolio-item joomla">
-          <div class="view efffect">
-            <div class="portfolio-image">
-              <img src="assets/images/portfolio/11.jpg" alt="">
-            </div>
-            <div class="mask text-center">
-              <h3>KÜSUR-AT</h3>
-              <h4>Lorem ipsum dolor sit amet consectetur</h4>
-              <a href="#">
-                <i class="fa fa-link"></i>
-              </a>
-              <a href="assets/images/portfolio/big-item3.jpg" data-gallery="prettyPhoto">
-                <i class="fa fa-search-plus"></i>
-              </a>
-            </div>
-          </div>
+      </div>
+    </div>
+    <div class="col-sm-3 col-xs-12 portfolio-item wordpress">
+      <div class="view efffect">
+        <div class="portfolio-image">
+          <img src="assets/images/portfolio/6.jpg" alt="">
         </div>
-        <div class="col-sm-3 col-xs-12 portfolio-item megento">
-          <div class="view efffect">
-            <div class="portfolio-image">
-              <img src="assets/images/portfolio/12.jpg" alt="">
-            </div>
-            <div class="mask text-center">
-              <h3>KÜSUR-AT</h3>
-              <h4>Lorem ipsum dolor sit amet consectetur</h4>
-              <a href="#">
-                <i class="fa fa-link"></i>
-              </a>
-              <a href="assets/images/portfolio/big-item4.jpg" data-gallery="prettyPhoto">
-                <i class="fa fa-search-plus"></i>
-              </a>
-            </div>
-          </div>
+        <div class="mask text-center">
+          <h3>KÜSUR-AT</h3>
+          <h4>Lorem ipsum dolor sit amet consectetur</h4>
+          <a href="#">
+            <i class="fa fa-link"></i>
+          </a>
+          <a href="assets/images/portfolio/big-item.jpg" data-gallery="prettyPhoto">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 col-xs-12 portfolio-item html">
+      <div class="view efffect">
+        <div class="portfolio-image">
+          <img src="assets/images/portfolio/7.jpg" alt="">
+        </div>
+        <div class="mask text-center">
+          <h3>KÜSUR-AT</h3>
+          <h4>Lorem ipsum dolor sit amet consectetur</h4>
+          <a href="#">
+            <i class="fa fa-link"></i>
+          </a>
+          <a href="assets/images/portfolio/big-item.jpg" data-gallery="prettyPhoto">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 col-xs-12 portfolio-item joomla">
+      <div class="view efffect">
+        <div class="portfolio-image">
+          <img src="assets/images/portfolio/8.jpg" alt="">
+        </div>
+        <div class="mask text-center">
+          <h3>KÜSUR-AT</h3>
+          <h4>Lorem ipsum dolor sit amet consectetur</h4>
+          <a href="#">
+            <i class="fa fa-link"></i>
+          </a>
+          <a href="assets/images/portfolio/big-item.jpg" data-gallery="prettyPhoto">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 col-xs-12 portfolio-item html">
+      <div class="view efffect">
+        <div class="portfolio-image">
+          <img src="assets/images/portfolio/9.jpg" alt="">
+        </div>
+        <div class="mask text-center">
+          <h3>KÜSUR-AT</h3>
+          <h4>Lorem ipsum dolor sit amet consectetur</h4>
+          <a href="#">
+            <i class="fa fa-link"></i>
+          </a>
+          <a href="assets/images/portfolio/big-item.jpg" data-gallery="prettyPhoto">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 col-xs-12 portfolio-item wordpress">
+      <div class="view efffect">
+        <div class="portfolio-image">
+          <img src="assets/images/portfolio/10.jpg" alt="">
+        </div>
+        <div class="mask text-center">
+          <h3>KÜSUR-AT</h3>
+          <h4>Lorem ipsum dolor sit amet consectetur</h4>
+          <a href="#">
+            <i class="fa fa-link"></i>
+          </a>
+          <a href="assets/images/portfolio/big-item.jpg" data-gallery="prettyPhoto">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 col-xs-12 portfolio-item joomla">
+      <div class="view efffect">
+        <div class="portfolio-image">
+          <img src="assets/images/portfolio/11.jpg" alt="">
+        </div>
+        <div class="mask text-center">
+          <h3>KÜSUR-AT</h3>
+          <h4>Lorem ipsum dolor sit amet consectetur</h4>
+          <a href="#">
+            <i class="fa fa-link"></i>
+          </a>
+          <a href="assets/images/portfolio/big-item3.jpg" data-gallery="prettyPhoto">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 col-xs-12 portfolio-item megento">
+      <div class="view efffect">
+        <div class="portfolio-image">
+          <img src="assets/images/portfolio/12.jpg" alt="">
+        </div>
+        <div class="mask text-center">
+          <h3>KÜSUR-AT</h3>
+          <h4>Lorem ipsum dolor sit amet consectetur</h4>
+          <a href="#">
+            <i class="fa fa-link"></i>
+          </a>
+          <a href="assets/images/portfolio/big-item4.jpg" data-gallery="prettyPhoto">
+            <i class="fa fa-search-plus"></i>
+          </a>
         </div>
       </div>
     </div>
 
-  </section>
+
+  </div>
+  </div>
+
+  </section> -->
   <!--/#portfolio-->
 
-  <section id="clients" class="parallax-section">
-    <div class="container">
-      <div class="clients-wrapper">
-        <div class="row text-center">
-          <div class="col-sm-8 col-sm-offset-2">
-            <h2 class="title-one">Clients Say About Us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-              dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-          </div>
-        </div>
-        <div id="clients-carousel" class="carousel slide" data-ride="carousel">
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-target="#clients-carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#clients-carousel" data-slide-to="1"></li>
-            <li data-target="#clients-carousel" data-slide-to="2"></li>
-          </ol>
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner">
-            <div class="item active">
-              <div class="single-client">
-                <div class="media">
-                  <img class="pull-left" src="assets/images/clients/client1.jpg" alt="">
-                  <div class="media-body">
-                    <blockquote>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor
-                        sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                      <small>Someone famous in Source Title</small>
-                      <a href="">www.yourwebsite.com</a>
-                    </blockquote>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="single-client">
-                <div class="media">
-                  <img class="pull-left" src="assets/images/clients/client3.jpg" alt="">
-                  <div class="media-body">
-                    <blockquote>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor
-                        sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                      <small>Someone famous in Source Title</small>
-                      <a href="">www.yourwebsite.com</a>
-                    </blockquote>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="single-client">
-                <div class="media">
-                  <img class="pull-left" src="assets/images/clients/client2.jpg" alt="">
-                  <div class="media-body">
-                    <blockquote>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor
-                        sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                      <small>Someone famous in Source Title</small>
-                      <a href="">www.yourwebsite.com</a>
-                    </blockquote>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--/#clients-->
 
-  <section id="blog">
-    <div class="container">
-      <div class="row text-center clearfix">
-        <div class="col-sm-8 col-sm-offset-2">
-          <h2 class="title-one">Our Blog</h2>
-          <p class="blog-heading">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-            magna aliquam erat volutpat.</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="single-blog">
-            <img src="assets/images/blog/1.jpg" alt="" />
-            <h2>Lorem ipsum dolor sit amet</h2>
-            <ul class="post-meta">
-              <li>
-                <i class="fa fa-pencil-square-o"></i>
-                <strong> Posted By:</strong> John</li>
-              <li>
-                <i class="fa fa-clock-o"></i>
-                <strong> Posted On:</strong> Apr 15 2014</li>
-            </ul>
-            <div class="blog-content">
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                dolore magna aliquam erat volutpat.</p>
-            </div>
-            <a href="" class="btn btn-primary" data-toggle="modal" data-target="#blog-detail">Read More</a>
-          </div>
-          <div class="modal fade" id="blog-detail" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-body">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <img src="assets/images/blog/3.jpg" alt="" />
-                  <h2>Lorem ipsum dolor sit amet</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                    dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet,
-                    consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-                    erat volutpat.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                    dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet,
-                    consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-                    erat volutpat.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="single-blog">
-            <img src="assets/images/blog/2.jpg" alt="" />
-            <h2>Lorem ipsum dolor sit amet</h2>
-            <ul class="post-meta">
-              <li>
-                <i class="fa fa-pencil-square-o"></i>
-                <strong> Posted By:</strong> John</li>
-              <li>
-                <i class="fa fa-clock-o"></i>
-                <strong> Posted On:</strong> Apr 15 2014</li>
-            </ul>
-            <div class="blog-content">
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                dolore magna aliquam erat volutpat.</p>
-            </div>
-            <a href="" class="btn btn-primary" data-toggle="modal" data-target="#blog-two">Read More</a>
-          </div>
-          <div class="modal fade" id="blog-two" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-body">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <img src="assets/images/blog/2.jpg" alt="" />
-                  <h2>Lorem ipsum dolor sit amet</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                    dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet,
-                    consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-                    erat volutpat.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                    dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet,
-                    consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-                    erat volutpat.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="single-blog">
-            <img src="assets/images/blog/3.jpg" alt="" />
-            <h2>Lorem ipsum dolor sit amet</h2>
-            <ul class="post-meta">
-              <li>
-                <i class="fa fa-pencil-square-o"></i>
-                <strong> Posted By:</strong> John</li>
-              <li>
-                <i class="fa fa-clock-o"></i>
-                <strong> Posted On:</strong> Apr 15 2014</li>
-            </ul>
-            <div class="blog-content">
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                dolore magna aliquam erat volutpat.</p>
-            </div>
-            <a href="" class="btn btn-primary" data-toggle="modal" data-target="#blog-three">Read More</a>
-          </div>
-          <div class="modal fade" id="blog-three" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-body">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <img src="assets/images/blog/3.jpg" alt="" />
-                  <h2>Lorem ipsum dolor sit amet</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                    dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet,
-                    consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-                    erat volutpat.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                    dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet,
-                    consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-                    erat volutpat.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="single-blog">
-            <img src="assets/images/blog/3.jpg" alt="" />
-            <h2>Lorem ipsum dolor sit amet</h2>
-            <ul class="post-meta">
-              <li>
-                <i class="fa fa-pencil-square-o"></i>
-                <strong> Posted By:</strong> John</li>
-              <li>
-                <i class="fa fa-clock-o"></i>
-                <strong> Posted On:</strong> Apr 15 2014</li>
-            </ul>
-            <div class="blog-content">
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                dolore magna aliquam erat volutpat.</p>
-            </div>
-            <a href="" class="btn btn-primary" data-toggle="modal" data-target="#blog-four">Read More</a>
-          </div>
-          <div class="modal fade" id="blog-four" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-body">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <img src="assets/images/blog/3.jpg" alt="" />
-                  <h2>Lorem ipsum dolor sit amet</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                    dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet,
-                    consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-                    erat volutpat.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                    dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet,
-                    consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-                    erat volutpat.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="single-blog">
-            <img src="assets/images/blog/2.jpg" alt="" />
-            <h2>Lorem ipsum dolor sit amet</h2>
-            <ul class="post-meta">
-              <li>
-                <i class="fa fa-pencil-square-o"></i>
-                <strong> Posted By:</strong> John</li>
-              <li>
-                <i class="fa fa-clock-o"></i>
-                <strong> Posted On:</strong> Apr 15 2014</li>
-            </ul>
-            <div class="blog-content">
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                dolore magna aliquam erat volutpat.</p>
-            </div>
-            <a href="" class="btn btn-primary" data-toggle="modal" data-target="#blog-six">Read More</a>
-          </div>
-          <div class="modal fade" id="blog-six" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-body">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <img src="assets/images/blog/2.jpg" alt="" />
-                  <h2>Lorem ipsum dolor sit amet</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                    dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet,
-                    consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-                    erat volutpat.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                    dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet,
-                    consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-                    erat volutpat.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-4">
-          <div class="single-blog">
-            <img src="assets/images/blog/1.jpg" alt="" />
-            <h2>Lorem ipsum dolor sit amet</h2>
-            <ul class="post-meta">
-              <li>
-                <i class="fa fa-pencil-square-o"></i>
-                <strong> Posted By:</strong> John</li>
-              <li>
-                <i class="fa fa-clock-o"></i>
-                <strong> Posted On:</strong> Apr 15 2014</li>
-            </ul>
-            <div class="blog-content">
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                dolore magna aliquam erat volutpat.</p>
-            </div>
-            <a href="" class="btn btn-primary" data-toggle="modal" data-target="#blog-seven">Read More</a>
-          </div>
-          <div class="modal fade" id="blog-seven" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-body">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <img src="assets/images/blog/1.jpg" alt="" />
-                  <h2>Lorem ipsum dolor sit amet</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                    dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet,
-                    consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-                    erat volutpat.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                    dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet,
-                    consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-                    erat volutpat.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
   <!--/#blog-->
+  <section id="our-team">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-sm-8 col-sm-offset-2">
+          <h2 class="title-one">Marduk Team</h2>
+          <p>TAKIMIMIZLA TANIŞIN ve SİZLERE DAHA İYİ GELİŞTİRMELER SUNMAMIZ İÇİN BİZE ULAŞIN</p>
+        </div>
+      </div>
+      <div id="team-carousel" class="carousel slide" data-interval="false">
 
+
+        <div class="carousel-inner team-members">
+          <div class="row item active">
+            <div class="col-sm-6 col-md-3">
+              <div class="single-member">
+                <img src="assets/images/our-team/member1.jpg" alt="team member" />
+                <h4>Sezer KESTİ</h4>
+                <h5>Yazılım Mühendisi</h5>
+                <p>İletişim Kanalları</p>
+                <div class="socials">
+
+                  <a href="mailto:sezerkesti@gmail.com">
+                    <i style="color: #DD4B39" class="fa fa-google-plus"></i>
+                  </a>
+
+                  <a target="blank" href="https://www.linkedin.com/in/sezer-kesti-648b92165">
+                    <i style="color: #007BB6" class="fa fa-linkedin"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="single-member">
+                <img src="assets/images/our-team/member2.jpg" alt="team member" />
+                <h4>Onur Tekin GÜNDOĞDU</h4>
+                <h5>Yazılım Mühendisi</h5>
+                <p>İletişim Kanalları</p>
+                <div class="socials">
+
+
+                  <a href="mailto:onurtekin96@hotmail.com">
+                    <i style="color: #DD4B39" class="fa fa-google-plus"></i>
+                  </a>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="single-member">
+                <img src="assets/images/our-team/member3.jpg" alt="team member" />
+                <h4>Sican YAVUZ</h4>
+                <h5>İş Geliştirici</h5>
+                <p>İletişim Kanalları</p>
+                <div class="socials">
+
+                  <a href="mailto:sicanyavuz@gmail.com">
+                    <i style="color: #DD4B39" class="fa fa-google-plus"></i>
+                  </a>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="single-member">
+                <img src="assets/images/our-team/member4.jpg" alt="team member" />
+                <h4>Büşra DİKİCİ</h4>
+                <h5>Tasarımcı</h5>
+                <p>İletişim Kanalları</p>
+                <div class="socials">
+
+                  <a href="mailto:busradikici12@outlook.com">
+                    <i style="color: #DD4B39" class="fa fa-google-plus"></i>
+                  </a>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/#Our-Team-->
   <section id="contact">
     <div class="container">
       <div class="row text-center clearfix">
         <div class="col-sm-8 col-sm-offset-2">
           <div class="contact-heading">
             <h2 class="title-one">Bize Yazın</h2>
-            <p>Her Türlü Öneriniz İçin Bize Yazın</p>
+            <p>Bizimle İletişime Geçmekten Çekinmeyin</p>
           </div>
         </div>
       </div>
@@ -948,20 +827,17 @@
 
               </address>
               <div class="social-icons">
-                <a href="#">
-                  <i class="fa fa-facebook"></i>
+                <a href="mailto:mardukkusurat@gmail.com">
+                  <i style="color: #DD4B39" class="fa fa-google-plus"></i>
                 </a>
-                <a href="#">
-                  <i class="fa fa-twitter"></i>
+                <a target="blank" href="https://facebook.com/kusur.at.92?ref=bookmarks">
+                  <i style="color: #3B5998" class="fa fa-facebook "></i>
                 </a>
-                <a href="#">
-                  <i class="fa fa-google-plus"></i>
+                <a target="blank" href="https://twitter.com/AtKusur?s=09">
+                  <i style="color: #55ACEE" class="fa fa-twitter"></i>
                 </a>
-                <a href="#">
-                  <i class="fa fa-dribbble"></i>
-                </a>
-                <a href="#">
-                  <i class="fa fa-linkedin"></i>
+                <a target="blank" href="https://www.instagram.com/mardukkusurat/">
+                  <i style="color: #3F729B" class="fa fa-instagram"></i>
                 </a>
               </div>
             </div>
@@ -969,33 +845,59 @@
           <div class="col-sm-6">
             <div id="contact-form-section">
               <div class="status alert alert-success" style="display: none"></div>
-              <form id="contact-form" class="contact" name="contact-form" method="post" action="send-mail.php">
+              <h3 style="color:#444444">ÖN KAYIT FORMU</h3>
+              <form id="contact-form">
+
                 <div class="form-group">
-                  <input type="text" name="name" class="form-control name-field" required="required" placeholder="İSİM">
+                  <input id="isim" type="text" name="name" class="form-control name-field" required="required" placeholder="AD SOYAD" #name>
                 </div>
                 <div class="form-group">
-                  <input type="email" name="email" class="form-control mail-field" required="required" placeholder="MAİL">
+                  <input id="mayl" type="email" name="email" class="form-control mail-field" required="required" placeholder="MAİL" #mail>
                 </div>
-                <div class="form-group">
-                  <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="ÖNERİ ŞİKAYET NE VARSA ARTIK :)"></textarea>
+
+
+                <input onclick="kayit()" type="button" class="btn-primary" value="GÖNDER GELSİN">
+                <br/>
+
+                <div>
+                  <h3>
+                    <span style="color:#444444" class="label">VEYA</span>
+                    <br/>
+                  </h3>
+                  <h4>
+                    <span style="float:left;color:#444444" class="label">GOOGLE İLE KAYDOLABİLİRSİN</span>
+                  </h4>
+                  <br/>
+                  <br/>
+
+
+
+
+                  <div style="float:left" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">
+                    <input onclick="kayit2()" type="button">
+                  </div>
+
+
+
+
                 </div>
-                <div class="form-group">
-                  <button type="submit" class="btn btn-primary">GÖNDER GELSİN</button>
-                </div>
+
               </form>
             </div>
           </div>
         </div>
       </div>
     </div>
+
   </section>
   <!--/#contact-->
 
   <footer id="footer">
     <div class="container">
-      <div class="text-center">
-        <p>Copyright &copy; 2014 -
-          <a href="http://mostafiz.me/">Mostafiz</a> | All Rights Reserved</p>
+      <div class="text-center ">
+        <p>Copyright &copy; 2016 -
+          <a target="blank" href="http://www.mardukbilisim.com/ ">MARDUKTEAM</a>
+        </p>
       </div>
     </div>
   </footer>
@@ -1003,3 +905,33 @@
 
 
 </body>
+<div class="dialog" [hidden]="!skshow">
+  <div>
+    <h2 style="color: #DD4B39">3 AY PREMİUM ÜYELİK HEDİYE</h2>
+    <h3 style="color: red">ÖN KAYIT FIRSATINI KAÇIRMAYIN</h3>
+    <P style="color: black">Ön Kayıt Yaptıran Öğrencilerimize Uygulamamızın Tüm Özelliklerinden Sınırsız Faydalanabilecekleri 3 Aylık Premim Üyelik
+      Bizden Hediye</P>
+    <div>
+      <div style="float: left;margin-right: 50px;margin-left: 50px">
+        <input id="isim2" type="text" placeholder="ADSOYAD" required="required">
+        <br/>
+        <br/>
+        <input id="mayl2" type="text" placeholder="MAİL" required="required">
+        <br/>
+        <br/>
+        <input class="btn-primary" style="background-color:darkblue;color: white" onclick="kayitpop()" type="button" value="KAYDOL">
+      </div>
+      <div style="float: left;margin-right: 50px">
+        <h2 style="color: black">VEYA</h2>
+      </div>
+      <div style="float: left">
+        <p style="color: black">GMAİL İLE KAYDOL</p>
+        <div style="float:left" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">
+          <input onclick="kayit2()" type="button">
+        </div>
+      </div>
+    </div>
+    <button (click)="close()" aria-label="Close" class="dialog__close-btn">X</button>
+  </div>
+
+</div>
